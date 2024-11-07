@@ -4,10 +4,12 @@ import TableScreen from './pages/TableScreen';
 import OrderScreen from './pages/OrderScreen';
 import PaymentScreen from './pages/PaymentScreen';
 import TableScreen1 from './components/TableScreen';
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
+        <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/tables" />} />
         <Route path="/tables" element={<TableScreen />} />
