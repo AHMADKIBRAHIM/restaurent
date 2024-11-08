@@ -16,8 +16,12 @@ const Header = () => {
           </li>
           <li style={navItemStyle}>
             <Link to="/payment">الدفع</Link>
-          </li><li style={navItemStyle}>
+          </li>
+          <li style={navItemStyle}>
             <Link to="/orderscreen1">orderscreen1</Link>
+          </li>
+          <li style={navItemStyle}>
+            <Link to="/PaymentScreen1">PaymentScreen1</Link>
           </li>
         </ul>
       </nav>
