@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
   return (
     <header style={headerStyle}>
@@ -15,6 +16,8 @@ const Header = () => {
           </li>
           <li style={navItemStyle}>
             <Link to="/payment">الدفع</Link>
+          </li><li style={navItemStyle}>
+            <Link to="/orderscreen1">orderscreen1</Link>
           </li>
         </ul>
       </nav>

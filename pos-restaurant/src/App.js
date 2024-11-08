@@ -5,6 +5,8 @@ import OrderScreen from './pages/OrderScreen';
 import PaymentScreen from './pages/PaymentScreen';
 import TableScreen1 from './components/TableScreen';
 import Header from './components/Header';
+import OrderScreen1 from './components/OrderScreen';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/orders" element={<OrderScreen />} />
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/TableScreen1" element={<TableScreen1 />} />
+        <Route path="/OrderScreen1" element={<OrderScreen1 />} />
       </Routes>
     </Router>
   );
