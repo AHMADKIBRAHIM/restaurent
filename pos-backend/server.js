@@ -17,6 +17,8 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors()); // السماح بالطلبات من أي مصدر، يمكنك تخصيصه للسماح لمصدر معين فقط
 
+const Table = require('./models/Table');
+const Order = require('./models/Order');
 
 // الاتصال بقاعدة البيانات MongoDB
 mongoose.connect(process.env.DB_URI, {
@@ -33,6 +35,13 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/orders', paymentRoutes); // يتم الوصول إلى الدفع عبر نفس مسار الطلبات
 
 
+// مسار رئيسي للاختبار
+app.get('/', (req, res) => {
+  res.send('Welcome to the POS API!');
+});
+
+
+// نقاط النهاية
 // نقطة النهاية لجلب جميع الطاولات
 app.get('/api/tables', async (req, res) => {
   try {
@@ -84,7 +93,6 @@ app.put('/api/orders/:id', async (req, res) => {
   }
 });
 
-
 // نقطة النهاية لإتمام الدفع وإنشاء الفاتورة
 app.post('/api/orders/:id/payment', async (req, res) => {
   const { id } = req.params;
@@ -97,6 +105,7 @@ app.post('/api/orders/:id/payment', async (req, res) => {
     res.status(500).json({ error: 'Failed to process payment' });
   }
 });
+
 
 // إعداد المنفذ
 const PORT = process.env.PORT || 5000;
