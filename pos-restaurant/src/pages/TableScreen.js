@@ -23,6 +23,7 @@ const TableScreen = () => {
 
   useEffect(() => {
     fetchTables();
+    console.log(tables);
   }, []);
 
   return (
