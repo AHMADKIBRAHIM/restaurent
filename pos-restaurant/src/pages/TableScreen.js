@@ -1,6 +1,7 @@
 // src/pages/TableScreen.js
 import React, { useState, useEffect } from 'react';
 import axios from '../axiosConfig';
+import '../styles/TableScreen.css'; // استيراد ملف CSS
 
 const TableScreen = () => {
   const [tables, setTables] = useState([]);
@@ -27,14 +28,14 @@ const TableScreen = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>قائمة الطاولات</h1>
-      <div>
+      <div className="tables-grid">
         {tables.map((table) => (
-          <div key={table.id}>
+          <div key={table.id} className="table-card">
             <p>رقم الطاولة: {table.number}</p>
             <p>الحالة: {table.status}</p>
-            <button onClick={() => handleAddOrder(table.id)}>إضافة طلب</button>
+            <button className="button" onClick={() => handleAddOrder(table.id)}>إضافة طلب</button>
           </div>
         ))}
       </div>
